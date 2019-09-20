@@ -44,7 +44,7 @@ import { EnsoTable } from '@enso-ui/tables/bulma';
 import {
     BooleanFilter, EnsoDateFilter, EnsoSelectFilter,
 } from '@enso-ui/filters/bulma';
-import { FilterState } from '@enso-ui/filters/bulma';
+import { FilterState } from '@enso-ui/filters/renderless';
 
 export default {
     name: 'Index',

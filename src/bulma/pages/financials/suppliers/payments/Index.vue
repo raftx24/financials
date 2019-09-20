@@ -54,7 +54,7 @@ import {
 } from '@enso-ui/filters/bulma';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBuilding, faUserTie } from '@fortawesome/free-solid-svg-icons';
-import { FilterState } from '@enso-ui/filters/bulma';
+import { FilterState } from '@enso-ui/filters/renderless';
 
 library.add(faBuilding, faUserTie);
 

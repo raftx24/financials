@@ -55,7 +55,7 @@ import {
 } from '@enso-ui/filters/bulma';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilePdf, faBuilding, faUserTie, faFileInvoice } from '@fortawesome/free-solid-svg-icons';
-import { FilterState } from '@enso-ui/filters/bulma';
+import { FilterState } from '@enso-ui/filters/renderless';
 import ClientFilter from '../components/ClientFilter.vue';
 
 library.add(faFilePdf, faBuilding, faUserTie, faFileInvoice);
