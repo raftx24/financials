@@ -67,6 +67,16 @@ export default {
         },
     },
 
+    watch: {
+        filters() {
+            const clientId = this.filters.person_id || this.filters.company_id;
+
+            if(clientId) {
+                this.clientId = clientId;
+            }
+        },
+    },
+
     methods: {
         setClientId(id) {
             switch (this.params.client) {
