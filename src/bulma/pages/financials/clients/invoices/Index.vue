@@ -1,6 +1,7 @@
 <template>
     <div class="wrapper">
-        <div class="columns is-centered is-multiline">
+        <div class="columns is-centered is-multiline"
+            v-if="ready">
             <div class="column is-5">
                 <client-filter :params="params"
                     :filters="filters.client_invoices"/>
@@ -34,6 +35,7 @@
             :filters="filters"
             :intervals="intervals"
             :params="params"
+            @ready="ready = true"
             ref="filterState"/>
         <enso-table class="box is-paddingless raises-on-hover"
             id="clientInvoices"
@@ -71,6 +73,7 @@ export default {
 
     data: () => ({
         apiVersion: 1,
+        ready: false,
         filters: {
             client_invoices: {
                 is_cancelled: false,

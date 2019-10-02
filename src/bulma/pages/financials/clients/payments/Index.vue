@@ -1,6 +1,7 @@
 <template>
     <div class="wrapper">
-        <div class="columns is-centered is-multiline">
+        <div class="columns is-centered is-multiline"
+            v-if="ready">
             <div class="column is-4">
                 <client-filter :params="params"
                     :filters="filters.client_payments"/>
@@ -72,6 +73,7 @@ export default {
 
     data: () => ({
         apiVersion: 1,
+        ready: false,
         filters: {
             client_payments: {
                 is_cancelled: false,

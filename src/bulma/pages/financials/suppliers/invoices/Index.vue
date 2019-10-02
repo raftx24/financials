@@ -1,6 +1,7 @@
 <template>
     <div class="wrapper">
-        <div class="columns is-centered">
+        <div class="columns is-centered"
+            v-if="ready">
             <div class="column is-4">
                 <enso-select-filter class="box raises-on-hover"
                     v-model="filters.supplier_invoices.supplier_id"
@@ -29,6 +30,7 @@
             :filters="filters"
             :intervals="intervals"
             :params="params"
+            @ready="ready = true"
             ref="filterState"/>
         <enso-table class="box is-paddingless raises-on-hover"
             id="outInvoices"
@@ -57,6 +59,7 @@ export default {
 
     data: () => ({
         apiVersion: 1,
+        ready: false,
         supplierParams: { is_supplier: true },
         filters: {
             supplier_invoices: {
