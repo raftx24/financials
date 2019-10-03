@@ -8,13 +8,10 @@
             </div>
             <div class="column is-narrow">
                 <enso-date-filter class="box raises-on-hover"
-                    :title="i18n('Due Date')"
-                    default="thirtyDays"
                     v-model="params.dateInterval"
-                    @update="
-                        intervals.client_invoices.due_date.max = $event.max;
-                        intervals.client_invoices.due_date.min = $event.min
-                    "/>
+                    default="thirtyDays"
+                    :title="i18n('Due Date')"
+                    :interval="intervals.client_invoices.due_date"/>
             </div>
             <div class="column is-narrow">
                 <boolean-filter class="box raises-on-hover"
