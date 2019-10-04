@@ -1,6 +1,7 @@
 <template>
     <div class="wrapper">
-        <div class="columns is-centered">
+        <div class="columns is-centered"
+            v-if="ready">
             <div class="column is-4">
                 <enso-select-filter class="box raises-on-hover"
                     v-model="filters.supplier_payments.supplier_id"
@@ -9,13 +10,10 @@
             </div>
             <div class="column is-narrow">
                 <enso-date-filter class="box raises-on-hover"
-                    :title="i18n('Due Date')"
-                    default="thirtyDays"
                     v-model="params.dateInterval"
-                    @update="
-                        intervals.supplier_payments.due_date.max = $event.max;
-                        intervals.supplier_payments.due_date.min = $event.min
-                    "/>
+                    default="thirtyDays"
+                    :title="i18n('Due Date')"
+                    :interval="intervals.supplier_payments.due_date"/>
             </div>
             <div class="column is-narrow">
                 <boolean-filter class="box raises-on-hover"
@@ -36,6 +34,7 @@
             :filters="filters"
             :intervals="intervals"
             :params="params"
+            @ready="ready = true"
             ref="filterState"/>
         <enso-table class="box is-paddingless raises-on-hover"
             :filters="filters"
@@ -66,6 +65,7 @@ export default {
 
     data: () => ({
         apiVersion: 1,
+        ready: false,
         clientSource: null,
         clientId: null,
         filters: {

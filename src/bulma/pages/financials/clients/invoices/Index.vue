@@ -1,19 +1,17 @@
 <template>
     <div class="wrapper">
-        <div class="columns is-centered is-multiline">
+        <div class="columns is-centered is-multiline"
+            v-if="ready">
             <div class="column is-5">
                 <client-filter :params="params"
                     :filters="filters.client_invoices"/>
             </div>
             <div class="column is-narrow">
                 <enso-date-filter class="box raises-on-hover"
-                    :title="i18n('Due Date')"
-                    default="thirtyDays"
                     v-model="params.dateInterval"
-                    @update="
-                        intervals.client_invoices.due_date.max = $event.max;
-                        intervals.client_invoices.due_date.min = $event.min
-                    "/>
+                    default="thirtyDays"
+                    :title="i18n('Due Date')"
+                    :interval="intervals.client_invoices.due_date"/>
             </div>
             <div class="column is-narrow">
                 <boolean-filter class="box raises-on-hover"
@@ -34,6 +32,7 @@
             :filters="filters"
             :intervals="intervals"
             :params="params"
+            @ready="ready = true"
             ref="filterState"/>
         <enso-table class="box is-paddingless raises-on-hover"
             id="clientInvoices"
@@ -71,6 +70,7 @@ export default {
 
     data: () => ({
         apiVersion: 1,
+        ready: false,
         filters: {
             client_invoices: {
                 is_cancelled: false,
