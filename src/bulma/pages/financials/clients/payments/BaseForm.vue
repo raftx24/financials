@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import { EnsoForm, FormField } from '@enso-ui/bulma';
 import { mapState } from 'vuex';
+import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import partnerType from '../mixins/partnerType';

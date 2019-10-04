@@ -21,10 +21,7 @@
 </template>
 
 <script>
-
-import {
-    EnsoFilter, EnsoSelectFilter,
-} from '@enso-ui/filters/bulma';
+import { EnsoFilter, EnsoSelectFilter } from '@enso-ui/filters/bulma';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBuilding, faUserTie } from '@fortawesome/free-solid-svg-icons';
 
@@ -96,5 +93,4 @@ export default {
         },
     },
 };
-
 </script>

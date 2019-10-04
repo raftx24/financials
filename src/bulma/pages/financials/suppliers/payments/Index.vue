@@ -46,15 +46,12 @@
 </template>
 
 <script>
-
 import { mapState } from 'vuex';
 import { EnsoTable } from '@enso-ui/tables/bulma';
-import {
-    BooleanFilter, EnsoDateFilter, EnsoSelectFilter,
-} from '@enso-ui/filters/bulma';
+import { BooleanFilter, EnsoDateFilter, EnsoSelectFilter } from '@enso-ui/filters/bulma';
+import { FilterState } from '@enso-ui/filters/renderless';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faBuilding, faUserTie } from '@fortawesome/free-solid-svg-icons';
-import { FilterState } from '@enso-ui/filters/renderless';
 
 library.add(faBuilding, faUserTie);
 
@@ -96,5 +93,4 @@ export default {
         ...mapState(['enums']),
     },
 };
-
 </script>

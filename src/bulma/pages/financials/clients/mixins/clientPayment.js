@@ -10,7 +10,7 @@ export default {
             return [
                 this.enums.paymentTypes.Receipt,
                 this.enums.paymentTypes.POSReceipt,
-                this.enums.paymentTypes.CashRegisterReceipt
+                this.enums.paymentTypes.CashRegisterReceipt,
             ].includes(`${this.type}`);
         },
         hasNoSerial() {
@@ -22,7 +22,7 @@ export default {
                 this.enums.paymentTypes.Receipt,
                 this.enums.paymentTypes.POSReceipt,
                 this.enums.paymentTypes.CashRegisterReceipt,
-                this.enums.paymentTypes.Voucher
+                this.enums.paymentTypes.Voucher,
             ].includes(`${this.type}`);
         },
     },
@@ -54,5 +54,5 @@ export default {
 
             return this;
         },
-    }
-}
+    },
+};
