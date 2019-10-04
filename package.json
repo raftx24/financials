@@ -1,10 +1,6 @@
 {
   "name": "@enso-ui/financials",
-<<<<<<< HEAD
-  "version": "1.0.7",
-=======
   "version": "1.0.8",
->>>>>>> 400a7eb06c2a884666ef1881cdb0b4e5c6f313de
   "description": "Financial operations package",
   "main": "index.js",
   "scripts": {
