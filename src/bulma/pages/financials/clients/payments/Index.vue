@@ -47,14 +47,11 @@
 </template>
 
 <script>
-
 import { mapState } from 'vuex';
 import { EnsoTable } from '@enso-ui/tables/bulma';
-import {
-    BooleanFilter, EnsoDateFilter, EnsoSelectFilter,
-} from '@enso-ui/filters/bulma';
-import { faFilePdf, faBuilding, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { BooleanFilter, EnsoDateFilter, EnsoSelectFilter } from '@enso-ui/filters/bulma';
 import { FilterState } from '@enso-ui/filters/renderless';
+import { faFilePdf, faBuilding, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import ClientFilter from '../components/ClientFilter.vue';
 
@@ -117,5 +114,4 @@ export default {
         },
     },
 };
-
 </script>

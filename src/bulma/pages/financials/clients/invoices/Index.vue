@@ -49,12 +49,12 @@
 <script>
 import { mapState } from 'vuex';
 import { EnsoTable } from '@enso-ui/tables/bulma';
-import {
-    BooleanFilter, EnsoDateFilter, EnsoFilter,
-} from '@enso-ui/filters/bulma';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faFilePdf, faBuilding, faUserTie, faFileInvoice } from '@fortawesome/free-solid-svg-icons';
+import { BooleanFilter, EnsoDateFilter, EnsoFilter } from '@enso-ui/filters/bulma';
 import { FilterState } from '@enso-ui/filters/renderless';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+    faFilePdf, faBuilding, faUserTie, faFileInvoice,
+} from '@fortawesome/free-solid-svg-icons';
 import ClientFilter from '../components/ClientFilter.vue';
 
 library.add(faFilePdf, faBuilding, faUserTie, faFileInvoice);
