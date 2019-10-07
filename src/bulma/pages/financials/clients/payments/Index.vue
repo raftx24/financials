@@ -108,7 +108,7 @@ export default {
         },
         downloadPdf($event) {
             if ($event.type === 'Receipt') {
-                window.open(this.route('financials.clients.payments.pdf', { payment: $event.dtRowId }), '_blank');
+                window.open(this.route('financials.clients.payments.pdf', { payment: $event.id }), '_blank');
 
                 return;
             }

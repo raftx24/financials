@@ -111,7 +111,7 @@ export default {
         },
 
         downloadPdf($event) {
-            window.open(this.route('financials.clients.invoices.pdf', { invoice: $event.dtRowId }), '_blank');
+            window.open(this.route('financials.clients.invoices.pdf', { invoice: $event.id }), '_blank');
         },
     },
 };
