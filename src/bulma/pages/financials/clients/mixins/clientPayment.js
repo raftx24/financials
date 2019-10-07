@@ -1,6 +1,6 @@
 export default {
     data: () => ({
-        ready: true,
+        ready: false,
     }),
     computed: {
         type() {

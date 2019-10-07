@@ -1,13 +1,17 @@
 <template>
-    <base-form/>
+    <div class="columns is-centered">
+        <div class="column is-three-quarters-desktop is-full-touch">
+            <enso-form class="box has-background-light raises-on-hover"/>
+        </div>
+    </div>
 </template>
 
 <script>
-import BaseForm from './BaseForm.vue';
+import { EnsoForm } from '@enso-ui/bulma';
 
 export default {
     name: 'Create',
 
-    components: { BaseForm },
+    components: { EnsoForm },
 };
 </script>
