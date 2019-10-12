@@ -33,12 +33,17 @@
 </template>
 
 <script>
-import { EnsoForm, Tab, Accessories, Comments, Documents } from '@enso-ui/bulma';
+import { EnsoForm } from '@enso-ui/forms/bulma';
+import {
+    Tab, Accessories, Comments, Documents,
+} from '@enso-ui/accessories/bulma';
 
 export default {
     name: 'Edit',
 
-    components: { EnsoForm, Tab, Accessories, Comments, Documents },
+    components: {
+ EnsoForm, Tab, Accessories, Comments, Documents 
+},
 
     computed: {
         paymentId() {
