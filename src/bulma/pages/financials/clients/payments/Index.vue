@@ -82,7 +82,7 @@ export default {
                 due_date: {
                     min: null,
                     max: null,
-                    dbDateFormat: 'Y-m-d',
+                    dateFormat: null,
                 },
             },
         },
