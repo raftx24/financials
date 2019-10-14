@@ -6,27 +6,27 @@
                 <enso-select-filter class="box raises-on-hover"
                     v-model="filters.supplier_payments.supplier_id"
                     source="administration.companies.options"
-                    title="Supplier"/>
+                    :label="i18n('Supplier')"/>
             </div>
             <div class="column is-narrow">
                 <enso-date-filter class="box raises-on-hover"
                     v-model="params.dateInterval"
                     default="thirtyDays"
-                    :title="i18n('Due Date')"
+                    :label="i18n('Due Date')"
                     :interval="intervals.supplier_payments.due_date"/>
             </div>
             <div class="column is-narrow">
                 <boolean-filter class="box raises-on-hover"
                     v-model="filters.supplier_payments.is_cancelled"
                     icons
-                    :title="i18n('Cancelled')"/>
+                    :label="i18n('Cancelled')"/>
             </div>
             <div class="column is-6-tablet is-4-desktop is-3-widescreen">
                 <enso-select-filter class="box raises-on-hover"
                     v-model="filters.supplier_payments.type"
                     multiple
                     :options="enums.paymentTypes._select()"
-                    :title="i18n('Types')"/>
+                    :label="i18n('Types')"/>
             </div>
         </div>
         <filter-state :api-version="apiVersion"
@@ -80,7 +80,7 @@ export default {
                 due_date: {
                     min: null,
                     max: null,
-                    dbDateFormat: 'Y-m-d',
+                    dateFormat: null,
                 },
             },
         },
