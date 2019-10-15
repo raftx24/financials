@@ -69,7 +69,7 @@ export default {
     inject: ['i18n', 'route'],
 
     data: () => ({
-        apiVersion: 1,
+        apiVersion: 1.1,
         ready: false,
         filters: {
             client_invoices: {

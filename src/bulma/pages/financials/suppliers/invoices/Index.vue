@@ -52,7 +52,7 @@ export default {
     inject: ['i18n'],
 
     data: () => ({
-        apiVersion: 1,
+        apiVersion: 1.1,
         ready: false,
         supplierParams: { is_supplier: true },
         filters: {
