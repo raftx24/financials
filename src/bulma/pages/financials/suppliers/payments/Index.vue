@@ -13,7 +13,7 @@
                     v-model="params.dateInterval"
                     default="thirtyDays"
                     :name="i18n('Due Date')"
-                    :interval="intervals.supplier_payments.due_date"/>
+                    :interval="intervals"/>
             </div>
             <div class="column is-narrow">
                 <boolean-filter class="box raises-on-hover"
@@ -38,7 +38,7 @@
             ref="filterState"/>
         <enso-table class="box is-paddingless raises-on-hover"
             :filters="filters"
-            :intervals="intervals"
+            :intervals="tableIntervals"
             id="out_payments"
             @reset="$refs.filterState.reset()"/>
     </div>
@@ -76,13 +76,8 @@ export default {
             },
         },
         intervals: {
-            supplier_payments: {
-                due_date: {
-                    min: null,
-                    max: null,
-                    dateFormat: null,
-                },
-            },
+            min: null,
+            max: null,
         },
         params: {
             dateInterval: 'thirtyDays',
@@ -91,6 +86,18 @@ export default {
 
     computed: {
         ...mapState(['enums']),
+        ...mapState(['meta']),
+        tableIntervals() {
+            return {
+                supplier_payments: {
+                    due_date: {
+                        min: this.intervals.min,
+                        max: this.intervals.max,
+                        dateFormat: this.meta && this.meta.dateTimeFormat,
+                    },
+                },
+            };
+        },
     },
 };
 </script>

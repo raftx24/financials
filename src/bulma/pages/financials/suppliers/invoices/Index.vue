@@ -13,7 +13,7 @@
                     v-model="params.dateInterval"
                     default="thirtyDays"
                     :name="i18n('Due Date')"
-                    :interval="intervals.supplier_invoices.due_date"/>
+                    :interval="intervals"/>
             </div>
             <div class="column is-narrow">
                 <boolean-filter class="box raises-on-hover"
@@ -32,12 +32,13 @@
         <enso-table class="box is-paddingless raises-on-hover"
             id="outInvoices"
             :filters="filters"
-            :intervals="intervals"
+            :intervals="tableIntervals"
             @reset="$refs.filterState.reset()"/>
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import { EnsoTable } from '@enso-ui/tables/bulma';
 import { BooleanFilter, EnsoDateFilter, EnsoSelectFilter } from '@enso-ui/filters/bulma';
 import { FilterState } from '@enso-ui/filters/renderless';
@@ -62,18 +63,28 @@ export default {
             },
         },
         intervals: {
-            supplier_invoices: {
-                due_date: {
-                    min: null,
-                    max: null,
-                    dateFormat: null,
-                },
-            },
+            min: null,
+            max: null,
         },
         params: {
             dateInterval: 'thirtyDays',
         },
     }),
+
+    computed: {
+        ...mapState(['meta']),
+        tableIntervals() {
+            return {
+                supplier_invoices: {
+                    due_date: {
+                        min: this.intervals.min,
+                        max: this.intervals.max,
+                        dateFormat: this.meta && this.meta.dateTimeFormat,
+                    },
+                },
+            };
+        },
+    },
 
     methods: {
         create(mode) {
