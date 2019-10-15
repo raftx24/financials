@@ -41,8 +41,8 @@ export default {
     name: 'Edit',
 
     components: {
- EnsoForm, Tab, Accessories, Comments, Documents
-},
+        EnsoForm, Tab, Accessories, Comments, Documents,
+    },
 
     computed: {
         paymentId() {
