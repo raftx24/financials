@@ -6,7 +6,7 @@
                 <enso-select-filter class="box raises-on-hover"
                     v-model="filters.supplier_payments.supplier_id"
                     source="administration.companies.options"
-                    label="Supplier"/>
+                    :label="i18n('Supplier')"/>
             </div>
             <div class="column is-narrow">
                 <enso-date-filter class="box raises-on-hover"

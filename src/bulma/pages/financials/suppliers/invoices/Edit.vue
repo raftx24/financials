@@ -9,9 +9,9 @@
                         <div class="columns is-centered">
                             <div class="column is-two-thirds">
                                 <comments :id="invoiceId"
-                                          type="supplierInvoice"
-                                          @update="$set(count, 'Comments', $refs.comments.count)"
-                                          ref="comments"/>
+                                    type="supplierInvoice"
+                                    @update="$set(count, 'Comments', $refs.comments.count)"
+                                    ref="comments"/>
                             </div>
                         </div>
                     </tab>
@@ -20,9 +20,9 @@
                         <div class="columns is-centered">
                             <div class="column is-two-thirds">
                                 <documents :id="invoiceId"
-                                           type="supplierInvoice"
-                                           @update="$set(count, 'Documents', $refs.documents.count)"
-                                           ref="documents"/>
+                                    type="supplierInvoice"
+                                    @update="$set(count, 'Documents', $refs.documents.count)"
+                                    ref="documents"/>
                             </div>
                         </div>
                     </tab>
@@ -34,9 +34,8 @@
 
 <script>
 import { EnsoForm } from '@enso-ui/forms/bulma';
-import {
-    Tab, Accessories, Comments, Documents,
-} from '@enso-ui/accessories/bulma';
+import { Accessories, Comments, Documents } from '@enso-ui/accessories/bulma';
+import { Tab } from '@enso-ui/tabs/bulma';
 
 export default {
     name: 'Edit',
