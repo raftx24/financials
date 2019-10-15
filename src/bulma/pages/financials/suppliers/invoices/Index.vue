@@ -6,20 +6,20 @@
                 <enso-select-filter class="box raises-on-hover"
                     v-model="filters.supplier_invoices.supplier_id"
                     source="administration.companies.options"
-                    :label="i18n('Supplier')"/>
+                    :name="i18n('Supplier')"/>
             </div>
             <div class="column is-narrow">
                 <enso-date-filter class="box raises-on-hover"
                     v-model="params.dateInterval"
                     default="thirtyDays"
-                    :label="i18n('Due Date')"
+                    :name="i18n('Due Date')"
                     :interval="intervals.supplier_invoices.due_date"/>
             </div>
             <div class="column is-narrow">
                 <boolean-filter class="box raises-on-hover"
                     v-model="filters.supplier_invoices.is_cancelled"
                     icons
-                    :label="i18n('Cancelled')"/>
+                    :name="i18n('Cancelled')"/>
             </div>
         </div>
         <filter-state :api-version="apiVersion"

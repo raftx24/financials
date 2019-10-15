@@ -5,7 +5,7 @@
                 v-model="params.client"
                 icons
                 :options="clientOptions"
-                :label="i18n('Clients')"
+                :name="i18n('Clients')"
                 @input="$refs.selectFilter.clear()"/>
         </div>
         <div class="column">
@@ -13,7 +13,7 @@
                 v-model="clientId"
                 :source="clientSelectRoute"
                 :readonly="!clientSelectRoute"
-                :label="i18n('Client')"
+                :name="i18n('Client')"
                 @input="setClientId"
                 ref="selectFilter"/>
         </div>

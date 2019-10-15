@@ -10,21 +10,21 @@
                 <enso-date-filter class="box raises-on-hover"
                     v-model="params.dateInterval"
                     default="thirtyDays"
-                    :label="i18n('Due Date')"
+                    :name="i18n('Due Date')"
                     :interval="intervals.client_invoices.due_date"/>
             </div>
             <div class="column is-narrow">
                 <boolean-filter class="box raises-on-hover"
                     v-model="filters.client_invoices.is_cancelled"
                     icons
-                    :label="i18n('Cancelled')"/>
+                    :name="i18n('Cancelled')"/>
             </div>
             <div class="column is-narrow">
                 <enso-filter class="box raises-on-hover"
                     v-model="filters.client_invoices.type"
                     hide-off
                     :options="enums.invoiceTypes._filter()"
-                    :label="i18n('Type')"/>
+                    :name="i18n('Type')"/>
             </div>
         </div>
         <filter-state :api-version="apiVersion"
