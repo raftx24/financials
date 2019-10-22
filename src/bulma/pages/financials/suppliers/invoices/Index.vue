@@ -79,7 +79,7 @@ export default {
                     due_date: {
                         min: this.intervals.min,
                         max: this.intervals.max,
-                        dateFormat: this.meta && this.meta.dateTimeFormat,
+                        dateFormat: null,
                     },
                 },
             };
