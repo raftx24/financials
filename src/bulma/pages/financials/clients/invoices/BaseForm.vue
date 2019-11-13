@@ -15,7 +15,7 @@
                 <template v-if="hasInvoice" v-slot:lines>
                     <lines/>
                 </template>
-                <template v-if="hasLines" v-slot:actions>
+                <template v-if="hasLines" v-slot:actions-left>
                     <div>
                         <a class="button is-warning" @click="downloadPdf">
                             <span class="is-hidden-mobile">Download</span>

@@ -16,7 +16,7 @@
                     <form-field :field="field"
                         @input="update"/>
                 </template>
-                <template v-slot:actions>
+                <template v-slot:actions-left>
                     <div v-if="!isCreate && `${type}` === enums.paymentTypes.Receipt">
                         <a class="button is-warning" @click="downloadPdf">
                             <span class="is-hidden-mobile">Download</span>
