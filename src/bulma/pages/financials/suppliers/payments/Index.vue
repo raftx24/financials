@@ -29,6 +29,11 @@
                     :name="i18n('Types')"/>
             </div>
         </div>
+        <enso-table class="box is-paddingless raises-on-hover"
+            :filters="filters"
+            :intervals="tableIntervals"
+            id="out_payments"
+            @reset="$refs.filterState.reset()"/>
         <filter-state :api-version="apiVersion"
             name="supplier_payment_filters"
             :filters="filters"
@@ -36,11 +41,6 @@
             :params="params"
             @ready="ready = true"
             ref="filterState"/>
-        <enso-table class="box is-paddingless raises-on-hover"
-            :filters="filters"
-            :intervals="tableIntervals"
-            id="out_payments"
-            @reset="$refs.filterState.reset()"/>
     </div>
 </template>
 

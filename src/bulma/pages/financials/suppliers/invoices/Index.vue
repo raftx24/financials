@@ -22,6 +22,11 @@
                     :name="i18n('Cancelled')"/>
             </div>
         </div>
+        <enso-table class="box is-paddingless raises-on-hover"
+            id="outInvoices"
+            :filters="filters"
+            :intervals="tableIntervals"
+            @reset="$refs.filterState.reset()"/>
         <filter-state :api-version="apiVersion"
             name="supplier_invoice_filters"
             :filters="filters"
@@ -29,11 +34,6 @@
             :params="params"
             @ready="ready = true"
             ref="filterState"/>
-        <enso-table class="box is-paddingless raises-on-hover"
-            id="outInvoices"
-            :filters="filters"
-            :intervals="tableIntervals"
-            @reset="$refs.filterState.reset()"/>
     </div>
 </template>
 

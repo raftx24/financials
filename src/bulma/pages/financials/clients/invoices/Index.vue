@@ -27,13 +27,6 @@
                     :name="i18n('Type')"/>
             </div>
         </div>
-        <filter-state :api-version="apiVersion"
-            name="client_invoice_filters"
-            :filters="filters"
-            :intervals="intervals"
-            :params="params"
-            @ready="ready = true"
-            ref="filterState"/>
         <enso-table class="box is-paddingless raises-on-hover"
             id="clientInvoices"
             :filters="filters"
@@ -43,6 +36,13 @@
             @create-individual="create('person')"
             @download-pdf="downloadPdf"
             @reset="$refs.filterState.reset()"/>
+        <filter-state :api-version="apiVersion"
+            name="client_invoice_filters"
+            :filters="filters"
+            :intervals="intervals"
+            :params="params"
+            @ready="ready = true"
+            ref="filterState"/>
     </div>
 </template>
 
