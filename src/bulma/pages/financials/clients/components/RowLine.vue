@@ -22,19 +22,13 @@
                 @input="errors.clear('quantity'); update()">
         </td>
         <td class="has-text-right">
-            <div class="select"
-                 :class="{'is-danger': errors.has('measurementUnits')}">
-                <select :readonly="line.processing" v-model="line.measurementUnit"
-                    @input="errors.clear('measurementUnits'); update()">
-                    <option class="option"
-                        v-for="measurementUnit in enums.measurementUnits._select()"
-                        :key="measurementUnit.id"
-                        :selected="line.measurementUnit === measurementUnit.id"
-                        :value="measurementUnit.id">
-                        {{ measurementUnit.name }}
-                    </option>
-                </select>
-            </div>
+            <enso-select
+                :class="{'is-danger': errors.has('measurementUnitId')}"
+                source="administration.measurementUnits.options"
+                :readonly="line.processing"
+                v-model.number="line.measurementUnitId"
+                @input="errors.clear('measurementUnitId'); update()"
+                translated disableClear/>
         </td>
 
         <td class="has-text-right price">
@@ -100,6 +94,7 @@ import { mapState } from 'vuex';
 import { selectOnFocus } from '@enso-ui/directives';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrashAlt, faPercentage } from '@fortawesome/free-solid-svg-icons';
+import { EnsoSelect } from '@enso-ui/select/bulma';
 
 library.add(faTrashAlt, faPercentage);
 
@@ -109,6 +104,8 @@ export default {
     ],
 
     directives: { selectOnFocus },
+
+    components: { EnsoSelect },
 
     props: {
         line: {
