@@ -24,14 +24,14 @@
         <td class="has-text-right">
             <div class="select"
                  :class="{'is-danger': errors.has('measurementUnits')}">
-                <select :readonly="line.processing" v-model="line.measurementUnit"
-                    @input="errors.clear('measurementUnits'); update()">
+                <select :readonly="line.processing" v-model="line.measurementUnitId"
+                        @input="errors.clear('measurementUnits'); update()">
                     <option class="option"
-                        v-for="measurementUnit in enums.measurementUnits._select()"
+                        v-for="measurementUnit in measurementUnits()"
                         :key="measurementUnit.id"
-                        :selected="line.measurementUnit === measurementUnit.id"
+                        :selected="line.measurementUnitId === measurementUnit.id"
                         :value="measurementUnit.id">
-                        {{ measurementUnit.name }}
+                        {{ i18n(measurementUnit.name) }}
                     </option>
                 </select>
             </div>
@@ -105,7 +105,8 @@ library.add(faTrashAlt, faPercentage);
 
 export default {
     inject: [
-        'i18n', 'errorHandler', 'route', 'lines', 'chainRequest', 'invoice', 'updateInvoice',
+        'i18n', 'errorHandler', 'route', 'lines', 'chainRequest', 'invoice',
+        'updateInvoice', 'measurementUnits'
     ],
 
     directives: { selectOnFocus },

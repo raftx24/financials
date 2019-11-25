@@ -69,6 +69,11 @@ export default {
                 ? this.$refs.form.param('lines')
                 : [];
         },
+        measurementUnits() {
+            return this.isReady
+                ? this.$refs.form.param('measurementUnits')
+                : [];
+        },
         form() {
             return this.isReady
                 ? this.$refs.form
@@ -95,6 +100,7 @@ export default {
     provide() {
         return {
             lines: this.lines,
+            measurementUnits: this.measurementUnits,
             invoice: this.invoice,
             updateInvoice: this.updateInvoice,
         };
