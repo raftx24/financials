@@ -5,21 +5,21 @@
         </td>
         <td>
             <input class="input description full is-fullwidth"
-                   :class="{'is-danger': errors.has('description')}"
-                   v-model="line.description"
-                   v-select-on-focus
-                   :readonly="line.processing"
-                   :placeholder="i18n('Description')"
-                   @input="errors.clear('description'); update()">
+                :class="{'is-danger': errors.has('description')}"
+                v-model="line.description"
+                v-select-on-focus
+                :readonly="line.processing"
+                :placeholder="i18n('Description')"
+                @input="errors.clear('description'); update()">
         </td>
         <td class="has-text-right">
             <input class="input is-numeric"
-                   :class="{'is-danger': errors.has('quantity')}"
-                   v-model.number="line.quantity"
-                   v-select-on-focus
-                   :readonly="line.processing"
-                   :placeholder="i18n('qty')"
-                   @input="errors.clear('quantity'); update()">
+                :class="{'is-danger': errors.has('quantity')}"
+                v-model.number="line.quantity"
+                v-select-on-focus
+                :readonly="line.processing"
+                :placeholder="i18n('qty')"
+                @input="errors.clear('quantity'); update()">
         </td>
         <td class="has-text-right">
             <div class="select"
@@ -27,10 +27,10 @@
                 <select :readonly="line.processing" v-model="line.measurementUnitId"
                         @input="errors.clear('measurementUnits'); update()">
                     <option class="option"
-                            v-for="measurementUnit in measurementUnits()"
-                            :key="measurementUnit.id"
-                            :selected="line.measurementUnitId === measurementUnit.id"
-                            :value="measurementUnit.id">
+                        v-for="measurementUnit in measurementUnits()"
+                        :key="measurementUnit.id"
+                        :selected="line.measurementUnitId === measurementUnit.id"
+                        :value="measurementUnit.id">
                         {{ i18n(measurementUnit.name) }}
                     </option>
                 </select>
@@ -39,24 +39,24 @@
 
         <td class="has-text-right price">
             <input class="input is-numeric price is-fullwidth"
-                   :class="{'is-danger': errors.has('listPrice')}"
-                   v-model.number="line.listPrice"
-                   v-select-on-focus
-                   step="0.01"
-                   :readonly="line.processing"
-                   :placeholder="i18n('price')"
-                   @input="errors.clear('listPrice'); update()">
+                :class="{'is-danger': errors.has('listPrice')}"
+                v-model.number="line.listPrice"
+                v-select-on-focus
+                step="0.01"
+                :readonly="line.processing"
+                :placeholder="i18n('price')"
+                @input="errors.clear('listPrice'); update()">
         </td>
         <td class="has-text-right">
             <div class="select"
                  :class="{'is-danger': errors.has('vatPercent')}">
                 <select :readonly="line.processing" v-model="line.vatPercent"
-                        @input="errors.clear('vatPercent'); update()">
+                    @input="errors.clear('vatPercent'); update()">
                     <option class="option"
-                            v-for="vat in enums.vatRates._select()"
-                            :key="vat.id"
-                            :selected="line.vatPercent === vat.id"
-                            :value="vat.id">
+                        v-for="vat in enums.vatRates._select()"
+                        :key="vat.id"
+                        :selected="line.vatPercent === vat.id"
+                        :value="vat.id">
                         {{ vat.name }}%
                     </option>
                 </select>
@@ -65,12 +65,12 @@
         <td class="has-text-right ">
             <p class="control has-icons-right has-text-right">
                 <input class="input is-numeric discount"
-                       :class="{'is-danger': errors.has('discountPercent')}"
-                       v-model.number="line.discountPercent"
-                       v-select-on-focus
-                       :readonly="line.processing"
-                       :placeholder="i18n('discount')"
-                       @input="errors.clear('discountPercent'); update()">
+                    :class="{'is-danger': errors.has('discountPercent')}"
+                    v-model.number="line.discountPercent"
+                    v-select-on-focus
+                    :readonly="line.processing"
+                    :placeholder="i18n('discount')"
+                    @input="errors.clear('discountPercent'); update()">
                 <span class="icon is-small is-right">
                     <fa icon="percentage"
                         size="xs"/>
