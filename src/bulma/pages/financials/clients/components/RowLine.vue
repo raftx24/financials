@@ -106,7 +106,7 @@ library.add(faTrashAlt, faPercentage);
 export default {
     inject: [
         'i18n', 'errorHandler', 'route', 'lines', 'chainRequest', 'invoice',
-        'updateInvoice', 'measurementUnits'
+        'updateInvoice', 'measurementUnits',
     ],
 
     directives: { selectOnFocus },
@@ -207,7 +207,7 @@ export default {
     tr.invoice-line {
         td.is-numeric, .is-numeric {
             font-family: monospace;
-            font-size: 1.2em;
+            font-size: 1em;
             text-align: right;
         }
 

@@ -29,13 +29,12 @@
         </td>
         <td/>
     </tr>
-    <tr class="has-background-light total-price">
+    <tr class="has-background-light grand-total">
         <td colspan="4"/>
         <td v-if="form"
             class="has-text-right is-bold total-price" colspan="3">
             {{ i18n('Grand Total') }}
         </td>
-
         <td v-if="form"
             class="has-text-right is-bold total-price">
             {{ form.field('total').value | numberFormat(2) }}
@@ -58,12 +57,18 @@ export default {
 </script>
 
 <style>
-    tfoot.invoice-line tr.total-price td {
+    .invoice-line tr.total-price td, .invoice-line tr.grand-total td {
         border: none;
     }
-    td.total-price, td.total-quantity {
+    .total-price, .total-quantity {
         font-family: monospace;
-        font-size: 1.2em;
+        font-size: 1em;
+        text-align: right;
+    }
+
+    .grand-total {
+        font-family: monospace;
+        font-size: 1.1em;
         text-align: right;
     }
     .total-quantity {
